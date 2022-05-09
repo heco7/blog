@@ -30,8 +30,6 @@ function renderErrors($errors)
   }
 }
 
-// ===== FUNKTIONER FÖR REGISTRERING, INLOGGNING OCH UTLOGGNING =====
-
 /** Returnerar true om något av fälten vid registrering är tomma */
 function emptyInputRegister($username, $password, $passwordRepeat, $blogTitle, $blogPresentation)
 {
@@ -134,9 +132,6 @@ function logout()
   session_destroy();
   redirect('index.php?success=logout');
 }
-
-
-// ===== FUNKTIONER FÖR ATT HÄMTA BLOGGDATA =====
 
 /** Hämtar alla inlägg från databasen */
 function getPosts($conn)
