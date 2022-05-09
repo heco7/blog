@@ -1,7 +1,7 @@
 <?php
 
 // HTTP-rotväg för webbsidan
-define('ROOT_HTTP', 'http://www.student.ltu.se/~hencol-0/D0019E/4a/');
+define('ROOT_HTTP', 'http://www.example.com/');
 
 /** Omdirigerar till en viss URL. Utgår från sidans egen rotkatalog, ange t.ex parametern 'index.php' för att omdirigera till startsidan
  */
