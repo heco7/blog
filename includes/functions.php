@@ -145,6 +145,18 @@ function getPosts($conn)
   return $posts;
 }
 
+/** Hämtar bildadressen till en användares profilbild utifrån dess användarID */
+function getProfilePicture($conn, $id)
+{
+  // Sökväg till profilbildskatalog
+  $path = ROOT_HTTP . 'images/avatar/';
+  // Hämta användardata
+  $user = getUserById($conn, $id);
+  // Spara profilbild
+  $profilePicture = $user['image'];
+  return $path . $profilePicture;
+}
+
 /** Returnerar en associativ array med användardata från user-tabellen i den rad som innehåller det angivna användar-ID:t
  */
 function getUserById($conn, $id)
@@ -233,18 +245,6 @@ function getSinglePostFromUser($conn, $postId, $userId)
   // Spara i associativ array
   $result = mysqli_fetch_assoc($result);
   return $result;
-}
-
-/** Hämtar bildadressen till en användares profilbild utifrån dess användarID */
-function getProfilePicture($conn, $id)
-{
-  // Sökväg till profilbildskatalog
-  $path = ROOT_HTTP . 'images/avatar/';
-  // Hämta användardata
-  $user = getUserById($conn, $id);
-  // Spara profilbild
-  $profilePicture = $user['image'];
-  return $path . $profilePicture;
 }
 
 /** Hämtar bildmetadata för bild som tillhör ett specifikt inlägg */
